@@ -16,9 +16,9 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$hello'):
+    if message.content.startswith('!hello'):
         await message.channel.send('Whats poppin')
 
-client.run('MTI4MzY4MDQ3MzMzNTQ2Mzk3MA.G9Gxaq.gZ0LLf4GSTGLgym8KVWA0bJolZoJ-vCFwB3l5I')
+client.run('')
 
 # End of discord code
