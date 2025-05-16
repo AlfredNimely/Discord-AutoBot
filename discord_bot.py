@@ -11,7 +11,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print(f'We have logged in as {client.user}')
 
-# Allows for used of commands through discord chat
+# Allows for use of commands through discord chat
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -31,7 +31,6 @@ async def my_task():
 @client.event
 async def on_ready():
     my_task.start()
-
 
 client.run('your token here')
 
