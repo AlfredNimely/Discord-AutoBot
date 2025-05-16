@@ -1,33 +1,29 @@
 import tweepy
 
-#Authenthication
+bearer_token = "your bearer token here"
+
+consumer_key="your consumer key here"
+consumer_secret="your consumer secret here"
+access_token="your access token here"
+access_token_secret="your access token secret here"
+
+# App Authentication
+client = tweepy.Client(bearer_token=bearer_token)
+
+# User Authentication
+'''
 client = tweepy.Client(
-    consumer_key="",
-    consumer_secret="",
-    access_token="",
-    access_token_secret=""
+    consumer_key=consumer_key,
+    consumer_secret=consumer_secret,
+    access_token=access_token,
+    access_token_secret=access_token_secret
 )
-# Search Recent Tweets
+'''
+# Insert the hashtag you want to be searched here
+response = client.search_recent_tweets("Your hashtag here")
 
-# This endpoint/method returns Tweets from the last seven days
-
-response = client.search_recent_tweets("#COTW_GATO")
-# This method returns a Response object, a named tuple with data includes
-# errors, and meta fields
-print(response.meta)
-
-# In this case, the data field of the Response returned is a list of Tweet
-# objects
 tweets = response.data
 
-# Each Tweet object has a default ID and text fields
-for tweet in tweets:
-    print(tweet.id)
-    print(tweet.text)
-
-# By default, this endpoint/methods returns 10 results
-# You can retrieve up to 100 Tweets by specifying max_results
-# response = client.search_recent_tweets("#COTW_GATO", max_results=100)
 
 
 
